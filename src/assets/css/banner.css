@@ -1,0 +1,29 @@
+.banner-outer{
+    padding: 30px;
+}
+
+.banner-conts{
+    margin: 30px;
+}
+
+.banner-conts-img{
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.banner-conts-img-landscape-1{
+    width: 350px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: 470px;
+    position: relative;
+    left: 50px;
+}
+
+.banner-conts-img-landscape-2{
+    width: 370px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: 560px;
+}
