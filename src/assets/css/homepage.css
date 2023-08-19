@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap');
+
+.sideBar{
+    background-color: white;
+    padding: 30px;
+    margin: auto 0;
+    height: 100vh;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.sideBar-inner{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sideBar h2{
+    font-family: 'Rubik', sans-serif;
+}
+
+.sideBar .nav-links-inner{
+    margin: 20px 0;
+    text-align: left !important;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.sideBar .nav-links-img{
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.sideBar .nav-links-inner-bottom{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    width: 180px;
+    transform: translate(-50%, -50%);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 10px 10px;
+    border-radius: 30px;
+}
