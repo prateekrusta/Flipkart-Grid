@@ -7,6 +7,7 @@ import Handbag from '../../assets/logos/handbag.png';
 import Gym from '../../assets/logos/gym.png';
 import Gifts from '../../assets/logos/gift.png';
 import Jacket from '../../assets/logos/jacket.png';
+import Nav from '../navbar/navbar';
 
 const MainHomepage = () => {
   return (
@@ -42,7 +43,7 @@ const MainHomepage = () => {
               </div>
             </div>
             <div className="col-sm-10">
-              <Banner />
+              <Nav />
             </div>
         </div>
     </>
