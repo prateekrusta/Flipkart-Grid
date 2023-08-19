@@ -1,15 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap');
+
 .banner-outer{
-    padding: 30px;
+    padding: 0 30px;
 }
 
 .banner-conts{
     margin: 30px;
+    margin-left: 45px;
 }
 
 .banner-conts-img{
     width: 400px;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.banner-conts-img:hover{
+    transform: scale(1.05);
 }
 
 .banner-conts-img-landscape-1{
@@ -19,6 +27,7 @@
     height: 470px;
     position: relative;
     left: 50px;
+    transition: all 0.3s ease-in-out;
 }
 
 .banner-conts-img-landscape-2{
@@ -26,4 +35,37 @@
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     height: 560px;
+    transition: all 0.3s ease-in-out;
+}
+
+.banner-conts-img-landscape-1:hover{
+    transform: scale(1.05);
+}
+.banner-conts-img-landscape-2:hover{
+    transform: scale(1.05);
+}
+
+.heading-banner{
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    width: 250px;
+    position: relative;
+    left: 110px;
+    font-size: 50px;
+    margin-top: 30px;
+    letter-spacing: 1px;
+}
+
+.banner-conts-img-social{
+    width: 310px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: relative;
+    top: -5px;
+    left: 40px;
+    transition: all 0.3s ease-in-out;
+}
+
+.banner-conts-img-social:hover{
+    transform: scale(1.05);
 }

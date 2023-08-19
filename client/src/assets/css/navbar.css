@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap');
+
+.text-nav{
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.productNav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 270px;
+}
+.productNav h2{
+    font-family: 'Rubik', sans-serif;
+}
+
+.productNav .heading{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Noto Sans', sans-serif;
+    margin-left: 10px;
+}
+
+.productNav .sections{
+   display: flex;
+   flex-direction: row;
+}
+
+.heading img{
+    height: auto;
+}
+
+.sections .box{
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    padding: 0px 40px;
+    border-radius: 0%;
+    height: 50px;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px;
+    position: relative;
+    top: 20px;
+    left: 250px;
+    transition: all 0.3s ease-in-out;
+}
+
+.sections .box:nth-child(1){
+    border-radius: 20px 0 0 20px;
+    position: relative;
+    left: 270px;
+}
+.sections .box:nth-child(2){
+    border-radius: 0px 20px 20px 0px;
+}
+
+.sections .box:hover{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 5px;
+}
+
+.sections .box img{
+    margin-right: 5px;
+    width: 25px;
+    height: auto;
+}
+
+.box{
+    display: flex;
+    flex-direction: row;
+}

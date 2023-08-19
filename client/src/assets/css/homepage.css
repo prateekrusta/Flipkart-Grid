@@ -25,6 +25,11 @@
     margin: 20px 0;
     text-align: left !important;
     font-family: 'Noto Sans', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+.sideBar .nav-links-inner:hover{
+    transform: scale(1.05);
 }
 
 .sideBar .nav-links-img{

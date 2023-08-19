@@ -7,6 +7,8 @@ import Handbag from '../../assets/logos/handbag.png';
 import Gym from '../../assets/logos/gym.png';
 import Gifts from '../../assets/logos/gift.png';
 import Jacket from '../../assets/logos/jacket.png';
+import Nav from '../navbar/navbar';
+import ProductsNav from './productsNav';
 
 const MainHomepage = () => {
   return (
@@ -34,7 +36,7 @@ const MainHomepage = () => {
                 <img alt="" src={Gym} className='nav-links-img' /> Active Wear
               </div>
               <div className="nav-links-inner">
-                <img alt="" src={Gifts} className='nav-links-img' /> Gifts & Living
+                <img alt="" src={Gifts} className='nav-links-img' /> Gifting
               </div>
             </div>
               <div className="nav-links-inner-bottom">
@@ -42,6 +44,7 @@ const MainHomepage = () => {
               </div>
             </div>
             <div className="col-sm-10">
+              <ProductsNav />
               <Banner />
             </div>
         </div>
