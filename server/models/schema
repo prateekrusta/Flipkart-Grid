@@ -1,0 +1,45 @@
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
+
+
+const userSchema = new Schema({
+    emailId: {
+        type: String,
+        unique: true,
+    },
+    password: {
+        type: String,
+        default: '12345'
+    },
+    otp: {
+        type: String,
+    },
+    otpExpiration: {
+        type: Date,
+        required: false,
+    },
+    firstName: {
+        type: String,
+        required: 'First Name cannot be empty',
+    },
+    surname: {
+        type: String,
+        required: 'Name cannot be empty',
+    },
+    phoneNo: {
+        type: Number,
+        required: 'PhoneNo cannot be empty'
+    },
+    gender: {
+        type: String,
+        required: 'Gender cannot be empty',
+    },
+    age: {
+        type: Number,
+    },
+    dob: {
+        type:Date
+    }
+});
+
+module.exports = mongoose.model('User', userSchema);
