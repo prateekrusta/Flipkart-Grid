@@ -15,6 +15,7 @@ const morgan = require('morgan');
 // const notFoundMiddleware = require('../server/middleware/not-found');
 
 const userRoutes = require('./routes/userRoutes.js');
+const chatRoutes = require ('./routes/chat.js')
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(bodyParser.json({ limit: '10mb' }));
 app.use(morgan('dev'));
 
 app.use('/v1/user', userRoutes);
+app.use(chatRoutes);
 
 // app.use(notFoundMiddleware)
 
