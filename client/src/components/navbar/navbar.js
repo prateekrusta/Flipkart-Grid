@@ -7,6 +7,7 @@ import { MenuItem, Menu, Button } from '@mui/material';
 import Avatar from '../../assets/logos/avatar.png';
 import '../../assets/css/navbar.css';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import AdminNameContext from '../context/AdminNameContext';
 
 const Nav = () => {
@@ -15,6 +16,30 @@ const Nav = () => {
     const title = ['a', 'b', 'c'];
     const history = useNavigate(); 
     const { firstName } = useContext(AdminNameContext);
+
+    
+    const config = {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      };
+
+    const SearchHandler = (e) => {
+        e.preventDefault();
+    
+        const data = {
+            query:"blue shirt",
+        };
+        console.log(data)
+        const url = `http://localhost:8000/v1/user/searchQuery`;
+        axios.post(url, data, config)
+          .then((response) => {
+            console.log('Data sent successfully:', response.data);
+          })
+          .catch((error) => {
+            console.error('Error sending data:', error);
+          });
+      };
 
     const cartHandler = () => {
         
@@ -40,7 +65,7 @@ const Nav = () => {
                     id="free-solo-demo"
                     freeSolo
                     options={title}
-                    renderInput={(params) => <TextField {...params} label="Search for products..." />}
+                    renderInput={(params) => <TextField {...params} label="Search for products..." onChange={SearchHandler}/>}
                 />
             </div>
             <div onClick={cartHandler} style={{ display: 'flex', flexDirection: 'row',position: 'relative', left:'500px' }}>

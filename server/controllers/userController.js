@@ -126,8 +126,8 @@ exports.signup = async(req, res) => {
 
 exports.searchQuery = async(req, res) => {
     try{
-        const { query } = req.params;
-        console.log('The query is ',query);
+        // const { query } = req.params;
+        // console.log('The query is ',query);
         // let options = {
         //     scriptPath:" C:\\Users\\hp\\OneDrive\\Desktop\\FlipkartGrid\\server",
         //     args:[query]
