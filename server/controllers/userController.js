@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer')
 const User = require('../models/schema')
-
+const {PythonShell} = require("python-shell");
+const { spawn } =require('child_process');
 function generateOTP() {
     const digits = '0123456789';
     let otp = '';
@@ -122,3 +123,37 @@ exports.signup = async(req, res) => {
         res.status(500).json({error: 'Error Signing up'});
     }
 };
+
+exports.searchQuery = async(req, res) => {
+    try{
+        const { query } = req.params;
+        console.log('The query is ',query);
+        // let options = {
+        //     scriptPath:" C:\\Users\\hp\\OneDrive\\Desktop\\FlipkartGrid\\server",
+        //     args:[query]
+        // };
+        console.log("Going")
+        const pythonScript = spawn('python', ['getItems.py',query]);
+        console.log("spawn done")
+        let data1="";
+        pythonScript.stdout.on('data', (data)=>{
+            data1+=data.toString();
+            console.log(data);
+
+        });
+        
+        pythonScript.stderr.on('data', (data) => {
+            console.error(`Python script error: ${data}`);
+        });
+
+        pythonScript.on('close',(code) => {
+            console.log("code ",code);
+            console.log(data1);
+            res.json({data:data1});
+        });
+    } catch(error){
+        console.log(error);
+        res.status(250).json({error:'No products to show'});
+    }
+};
+
