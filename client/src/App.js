@@ -3,7 +3,7 @@ import React, { useState, useContext } from 'react';
 import './App.css';
 import MainHomepage from './components/homepage/main-homepage';
 import MainAuthentication from './components/login/main-sign';
-import Chat from './components/chat/chat';
+import AssistChat from './components/chat/assistive-chat';
 import AdminEmailContext from './components/context/adminContext';
 import AdminNameContext from './components/context/AdminNameContext';
 
@@ -21,7 +21,7 @@ function App() {
               <Routes>
                 <Route path="/dashboard" element={<MainHomepage />} />
                 <Route path="/" element={<MainAuthentication />} />
-                <Route path="/chat" element={<Chat />} />
+                <Route path="/chat" element={<AssistChat />} />
               </Routes>
             </main>
             </AdminNameContext.Provider>
