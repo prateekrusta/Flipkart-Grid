@@ -11,7 +11,7 @@ const Chatheader = (props) => {
       <div className="chat-header">
             <Grid container>
                 <Grid item xs={1}>
-                    <NavLink to="/">
+                    <NavLink to="/dashboard">
                         <ArrowBackIosNewIcon className='chat-back-arrow' />
                     </NavLink>
                 </Grid>

@@ -12,13 +12,12 @@ const AssistChat = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
-  const [messages, setMessages] = React.useState(''); // Initialize as empty
+  const [messages, setMessages] = React.useState(''); 
   const [response, setResponse] = React.useState('');
   const [showResponse, setShowResponse] = React.useState(false);
 
   useEffect(() => {
     if (messages && messages.trim() !== '') {
-      // Simulate response after 2 seconds
       const timeoutId = setTimeout(() => {
         setResponse('The latest Rakhi fashion trends combine traditional elegance with contemporary flair. Modern ethnic wear like fusion sarees and jacket-style anarkalis is in vogue, often adorned with intricate embroidery and mirror work. Soft pastel shades like mint green and blush pink dominate, creating a fresh and refined look. Statement accessories such as choker necklaces and oversized earrings add drama, while comfortable yet stylish footwear like juttis and block heels complete the ensemble. Mix-and-match styles, sustainable choices, and minimalist elegance also find their place, allowing for personalized and eco-conscious outfits that celebrate both tradition and innovation.');
         setShowResponse(true);

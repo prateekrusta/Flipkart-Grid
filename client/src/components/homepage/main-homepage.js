@@ -40,7 +40,7 @@ const MainHomepage = () => {
                 <img alt="" src={Gifts} className='nav-links-img' /> Gifting
               </div>
             </div>
-              <Link to="/chat-app"><div className="nav-links-inner-bottom">
+              <Link to="/chat"><div className="nav-links-inner-bottom">
                 <img alt="" src={Chat} className='nav-links-img' /> Help Center
               </div></Link>
             </div>
