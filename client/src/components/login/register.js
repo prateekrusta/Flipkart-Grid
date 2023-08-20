@@ -80,7 +80,7 @@ const Register = () => {
       .post(url_post, data, config)
       .then((response) => {
         console.log('Data sent successfully:', response.data);
-        history('/');
+        history('/dashboard');
       })
       .catch((error) => {
         console.error('Error sending data:', error);
@@ -89,8 +89,9 @@ const Register = () => {
 
   return (
     <div>
-      <form onSubmit={handleFormSubmit}>
-        <div className="form-group">
+      <form className='form-register' onSubmit={handleFormSubmit}>
+        <div className="form-group row">
+          <div className='col-sm-4'>
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -100,97 +101,105 @@ const Register = () => {
             value={emailId}
             onChange={handleEmailChange}
           />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password" 
-            name="password"
-            autoComplete="off"
-            required
-            value={password}
-            onChange={handlePasswordChange}
-          />
+          </div>
+          <div className='col-sm-4'>
+            <label htmlFor="password">Password</label>
+            <input
+              type="password" 
+              name="password"
+              autoComplete="off"
+              required
+              value={password}
+              onChange={handlePasswordChange}
+            />
+          </div>
+          <div className='col-sm-4'>
+            <label htmlFor="passwordConfirm">Confirm Password</label>
+            <input
+              type="password"
+              name="passwordConfirm"
+              autoComplete="off"
+              required
+              value={passwordConfirm}
+              onChange={handlePasswordConfirmChange}
+            />
+          </div>
         </div>
 
-        {/* New form inputs */}
-        <div className="form-group">
-          <label htmlFor="passwordConfirm">Confirm Password</label>
-          <input
-            type="password"
-            name="passwordConfirm"
-            autoComplete="off"
-            required
-            value={passwordConfirm}
-            onChange={handlePasswordConfirmChange}
-          />
+
+        <div className="form-group row">
+          <div className='col-sm-4'>
+            <label htmlFor="firstName">First Name</label>
+            <input
+              type="text"
+              name="firstName"
+              autoComplete="off"
+              required
+              value={firstName}
+              onChange={handleFirstNameChange}
+            />
+          </div>
+          <div className='col-sm-4'>
+            <label htmlFor="lastName">Last Name</label>
+            <input
+              type="text"
+              name="lastName"
+              autoComplete="off"
+              required
+              value={lastName}
+              onChange={handleLastNameChange}
+            />
+          </div>
+          <div className='col-sm-4'>
+            <label htmlFor="age">Age</label>
+            <input
+              type="number"
+              name="age"
+              autoComplete="off"
+              required
+              value={age}
+              onChange={handleAgeChange}
+            />
+          </div>
         </div>
-        <div className="form-group">
-          <label htmlFor="firstName">First Name</label>
-          <input
-            type="text"
-            name="firstName"
-            autoComplete="off"
-            required
-            value={firstName}
-            onChange={handleFirstNameChange}
-          />
+
+        <div className="form-group row">
+          <div className='col-sm-4'>
+            <label htmlFor="gender">Gender</label>
+            <input
+              type="text"
+              name="gender"
+              autoComplete="off"
+              required
+              value={gender}
+              onChange={handleGenderChange}
+            />
+          </div>
+          <div className='col-sm-4'>
+            <label htmlFor="dob">Date of Birth</label>
+            <input
+              type="date"
+              name="dob"
+              autoComplete="off"
+              required
+              value={dob}
+              onChange={handleDobChange}
+            />
+          </div>
+          <div className='col-sm-4'>
+            <label htmlFor="phoneNo">Phone Number</label>
+            <input
+              type="tel"
+              name="phoneNo"
+              autoComplete="off"
+              required
+              value={phoneNo}
+              onChange={handlePhoneNoChange}
+            />
+          </div>
         </div>
-        <div className="form-group">
-          <label htmlFor="lastName">Last Name</label>
-          <input
-            type="text"
-            name="lastName"
-            autoComplete="off"
-            required
-            value={lastName}
-            onChange={handleLastNameChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="phoneNo">Phone Number</label>
-          <input
-            type="tel"
-            name="phoneNo"
-            autoComplete="off"
-            required
-            value={phoneNo}
-            onChange={handlePhoneNoChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="gender">Gender</label>
-          <input
-            type="text"
-            name="gender"
-            autoComplete="off"
-            required
-            value={gender}
-            onChange={handleGenderChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="age">Age</label>
-          <input
-            type="number"
-            name="age"
-            autoComplete="off"
-            required
-            value={age}
-            onChange={handleAgeChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="dob">Date of Birth</label>
-          <input
-            type="date"
-            name="dob"
-            autoComplete="off"
-            required
-            value={dob}
-            onChange={handleDobChange}
-          />
-        </div>
+
+    
 
         <div className="btn-sbmt-cont">
           <button type="submit" value="Register" className="btn-sbmt" disabled={isLoading}>

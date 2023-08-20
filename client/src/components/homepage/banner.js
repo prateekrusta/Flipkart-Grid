@@ -1,4 +1,5 @@
 import '../../assets/css/banner.css';
+import React, { useContext } from 'react';
 import banner1 from '../../assets/images/banner1.png';
 import banner2 from '../../assets/images/banner2.png';
 import banner3 from '../../assets/images/banner3.png';
@@ -10,6 +11,7 @@ import social2 from '../../assets/images/social2.png';
 import social3 from '../../assets/images/social3.png';
 
 const Banner = () => {
+
   return (
     <div className='row'>
         <div className='col-sm-2'>

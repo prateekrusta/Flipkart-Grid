@@ -9,6 +9,7 @@ import Gifts from '../../assets/logos/gift.png';
 import Jacket from '../../assets/logos/jacket.png';
 import Nav from '../navbar/navbar';
 import ProductsNav from './productsNav';
+import LogoMain from '../../assets/logos/logo-main.png'
 
 const MainHomepage = () => {
   return (
@@ -16,7 +17,7 @@ const MainHomepage = () => {
         <div className="row">
             <div className="col-sm-2 sideBar">
               <div>
-                FashionCraze
+                <img alt="" src={LogoMain} className='logomain'/>
               </div>
             <div className='sideBar-inner'>
               <h2>EXPLORE!</h2>
@@ -44,6 +45,7 @@ const MainHomepage = () => {
               </div>
             </div>
             <div className="col-sm-10">
+              <Nav />
               <ProductsNav />
               <Banner />
             </div>

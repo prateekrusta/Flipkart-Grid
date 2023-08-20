@@ -5,6 +5,11 @@
     font-family: 'Noto Sans', sans-serif;
 }
 
+.search-bar{
+  position: relative;
+  left: 140px;
+}
+
 .productNav{
     display: flex;
     flex-direction: row;
