@@ -44,6 +44,7 @@ const MainHomepage = () => {
               </div>
             </div>
             <div className="col-sm-10">
+              <Nav />
               <ProductsNav />
               <Banner />
             </div>
