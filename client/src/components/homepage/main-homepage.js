@@ -10,7 +10,7 @@ import Jacket from '../../assets/logos/jacket.png';
 import Nav from '../navbar/navbar';
 import ProductsNav from './productsNav';
 import LogoMain from '../../assets/logos/logo-main.png'
-
+import {Link} from 'react-router-dom'
 const MainHomepage = () => {
   return (
     <>
@@ -40,9 +40,9 @@ const MainHomepage = () => {
                 <img alt="" src={Gifts} className='nav-links-img' /> Gifting
               </div>
             </div>
-              <div className="nav-links-inner-bottom">
+              <Link to="/chat"><div className="nav-links-inner-bottom">
                 <img alt="" src={Chat} className='nav-links-img' /> Help Center
-              </div>
+              </div></Link>
             </div>
             <div className="col-sm-10">
               <Nav />
