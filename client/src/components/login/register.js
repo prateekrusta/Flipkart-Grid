@@ -65,16 +65,16 @@ const Register = () => {
     const data = {
       emailId: emailId,
       password: password,
-      passwordConfirm: passwordConfirm,
+      password0: passwordConfirm,
       firstName: firstName,
-      lastName: lastName,
+      surname: lastName,
       phoneNo: phoneNo,
       gender: gender,
       age: age,
       dob: dob,
     };
     console.log(data);
-    const url_post = ''; 
+    const url_post = 'http://localhost:8000/v1/user/signup'; 
 
     axios
       .post(url_post, data, config)

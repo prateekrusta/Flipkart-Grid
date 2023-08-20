@@ -26,11 +26,10 @@ const Login = () => {
     const GetOTP = async (e) => {
         e.preventDefault();
         setError('');
-        setIsLoading(true);
+        
     
         try {
-          const apiUrl = '';
-    
+          const apiUrl = 'http://localhost:8000/v1/user/verify-otp';
           const response = await fetch(apiUrl, {
             method: 'POST',
             headers: {
@@ -39,7 +38,7 @@ const Login = () => {
             body: JSON.stringify({ emailId, password }),
           });
     
-          setIsLoading(false);
+          
     
           if (!response.ok) {
             const errorData = await response.json();
@@ -61,27 +60,29 @@ const Login = () => {
         },
       };
 
-    const handleFormSubmit =(e)=> {
+      const handleFormSubmit = (e) => {
         e.preventDefault();
-    
+      
         const data = {
           emailId: emailId,
           password: password,
-          otp:otp.toString(),
+          otp: otp.toString(),
         };
-        console.log(data)
-        const url_post = ``;
-    
-        axios.post(url_post, data, config)
-        .then((response) => {
-          console.log('Data sent successfully:', response.data);
-          history('/')
-        } 
-        )
-        .catch((error) => {
-          console.error('Error sending data:', error);
-        });
-        
+        console.log(data);
+        const url_post = `http://localhost:8000/v1/user/login`;
+        setIsLoading(true);
+        axios
+          .post(url_post, data, config)
+          .then((response) => {
+            setIsLoading(false);
+            console.log('Data sent successfully:', response.data);
+            
+            history('/');
+             
+            
+          }).catch((error) => {
+            console.error('Error sending data:', error);
+          });
       };
   return (
     <div>
@@ -117,7 +118,7 @@ const Login = () => {
                 onChange={handleOTPChange}
               />
             </div>
-            <Link to="" onClick={GetOTP} style={{color:'white'}}>GET OTP</Link>
+            <div onClick={GetOTP} style={{color:'white'}}>GET OTP</div>
             <div className="btn-sbmt-cont">
               <button type="submit" value="Login" className="btn-sbmt" disabled={isLoading}>
                 {isLoading ? (
