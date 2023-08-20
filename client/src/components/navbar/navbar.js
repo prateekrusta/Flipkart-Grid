@@ -6,11 +6,13 @@ import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDown
 import { MenuItem, Menu, Button } from '@mui/material';
 import Avatar from '../../assets/logos/avatar.png';
 import '../../assets/css/navbar.css';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Nav = () => {
     const [cartCount, setCartCount] = useState(0);
     const [anchorEl, setAnchorEl] = useState('');
     const title = ['a', 'b', 'c'];
+    const history = useNavigate(); 
 
     const cartHandler = () => {
         
@@ -25,7 +27,7 @@ const Nav = () => {
     };
 
     const handleLogout = () => {
-        
+        history('/');
     };
 
     return (
