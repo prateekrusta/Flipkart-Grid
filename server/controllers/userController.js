@@ -133,7 +133,7 @@ exports.searchQuery = async(req, res) => {
         //     args:[query]
         // };
         console.log("Going")
-        const pythonScript = spawn('python', ['getItems.py',query]);
+        const pythonScript = spawn('python', ['getItems.py']);
         console.log("spawn done")
         let data1="";
         pythonScript.stdout.on('data', (data)=>{
@@ -149,11 +149,35 @@ exports.searchQuery = async(req, res) => {
         pythonScript.on('close',(code) => {
             console.log("code ",code);
             console.log(data1);
-            res.json({data:data1});
+            res.json({data:JSON.parse(data1)});
         });
     } catch(error){
         console.log(error);
         res.status(250).json({error:'No products to show'});
     }
 };
+
+// exports.processData = async(req, res) => {
+//     console.log('received');
+//     console.log(req.data);
+//     let data='';
+//     req.on('data', chunk => {
+//         data += chunk;
+//       });
+//       console.log(data);
+//       req.on('end', () => {
+//         try {
+//           const dataFromPython = JSON.parse(data);
+//           console.log(dataFromPython);
+//           // Perform any processing you need with the data
+//           res.writeHead(200, { 'Content-Type': 'text/plain' });
+          
+//           res.json({data:dataFromPython});
+//         } catch (error) {
+//           console.error(error);
+//           res.writeHead(400, { 'Content-Type': 'text/plain' });
+//           res.end('Bad Request');
+//         }
+//       });
+// };
 

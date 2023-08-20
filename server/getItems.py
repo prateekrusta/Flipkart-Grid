@@ -63,7 +63,13 @@ for i in range(1, 5):
     # print(temp_dict)
     output_list.append(temp_dict)
 
-print(json.dumps(output_list, indent=4))
+import requests
+print(json.dumps(output_list))
+
+# url = "http://localhost:8000/v1/user/processData"
+# headers = {"Content-Type": "application/json"}
+# requests.post(url, data=json.dumps(output_list), headers=headers)
+
 
 
 
