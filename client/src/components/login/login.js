@@ -1,9 +1,13 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'
+import AdminEmailContext from '../context/adminContext';
+import AdminNameContext from '../context/AdminNameContext';
 import '../../assets/css/login.css';
 
 const Login = () => {
+    const { setEmailId } = useContext(AdminEmailContext);
+    const { setAdminName } = useContext(AdminNameContext);
     const [emailId, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [otp, setOTP] = useState('');
@@ -26,10 +30,9 @@ const Login = () => {
     const GetOTP = async (e) => {
         e.preventDefault();
         setError('');
-        
     
         try {
-          const apiUrl = 'http://localhost:8000/v1/user/verify-otp';
+          const apiUrl = 'http://localhost:8000/v1/user/login';
           const response = await fetch(apiUrl, {
             method: 'POST',
             headers: {
@@ -47,10 +50,15 @@ const Login = () => {
           }
     
           const data = await response.json();
+          setEmailId(data.emailId);
+          setAdminName(data.firstName);
+          localStorage.setItem('emailId', data.emailId);
+          localStorage.setItem('firstName', data.firstName);
     
         } catch (error) {
           setError('An error occurred during login. Please try again later.');
           setIsLoading(false);
+          console.log(error);
         }
       };
     
@@ -65,18 +73,21 @@ const Login = () => {
       
         const data = {
           emailId: emailId,
-          password: password,
           otp: otp.toString(),
         };
         console.log(data);
-        const url_post = `http://localhost:8000/v1/user/login`;
+        const url_post = `http://localhost:8000/v1/user/verify-otp`;
         setIsLoading(true);
         axios
           .post(url_post, data, config)
           .then((response) => {
             setIsLoading(false);
             console.log('Data sent successfully:', response.data);
-            history('/dashboard');
+            setEmailId(data.emailId);
+            setAdminName(data.firstName);
+            localStorage.setItem('emailId', data.emailId);
+            localStorage.setItem('firstName', data.firstName);
+            {(response.data.error) ? <></> : history('/dashboard')}
           }).catch((error) => {
             console.error('Error sending data:', error);
           });

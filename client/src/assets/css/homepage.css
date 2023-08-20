@@ -12,8 +12,8 @@
 
 .sideBar-inner{
     position: absolute;
-    top: 45%;
-    left: 50%;
+    top: 52%;
+    left: 52%;
     transform: translate(-50%, -50%);
 }
 
@@ -48,4 +48,10 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 10px 10px;
     border-radius: 30px;
+}
+
+.logomain{
+    width: 200px;
+    position: relative;
+    top: -50px;
 }
