@@ -6,6 +6,7 @@ import MainAuthentication from './components/login/main-sign';
 import AssistChat from './components/chat/assistive-chat';
 import AdminEmailContext from './components/context/adminContext';
 import AdminNameContext from './components/context/AdminNameContext';
+import Products from './components/homepage/products';
 
 function App() {
 
@@ -21,6 +22,8 @@ function App() {
               <Routes>
                 <Route path="/dashboard" element={<MainHomepage />} />
                 <Route path="/" element={<MainAuthentication />} />
+                <Route path="/chat" element={<Chat />} />
+                <Route path="/search-products" element={<Products />} />
                 <Route path="/chat" element={<AssistChat />} />
               </Routes>
             </main>
