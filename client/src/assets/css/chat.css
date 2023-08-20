@@ -26,14 +26,15 @@
 }
 
 .wrapForm input[type=text]:focus{
-    outline: #a66cec !important;
+    outline: black !important;
 }
 
 .btn-chat{
-    background-color: #a66cec !important;
+    background-color: black !important;
     border-radius: 100px !important;
     padding: 10px 13px ;
     border: none;
+    color: #f5f5f5;
 }
 
 .chat-header{
