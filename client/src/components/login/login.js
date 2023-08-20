@@ -76,7 +76,7 @@ const Login = () => {
           .then((response) => {
             setIsLoading(false);
             console.log('Data sent successfully:', response.data);
-            history('/');
+            history('/dashboard');
           }).catch((error) => {
             console.error('Error sending data:', error);
           });

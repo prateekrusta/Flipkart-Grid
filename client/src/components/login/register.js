@@ -80,7 +80,7 @@ const Register = () => {
       .post(url_post, data, config)
       .then((response) => {
         console.log('Data sent successfully:', response.data);
-        history('/');
+        history('/dashboard');
       })
       .catch((error) => {
         console.error('Error sending data:', error);
