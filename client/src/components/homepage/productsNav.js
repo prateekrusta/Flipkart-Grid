@@ -11,7 +11,7 @@ import '../../assets/css/navbar.css';
 const ProductsNav = () => {
   return (
     <div className='productNav' style={{marginTop:'5%'}}>
-      <div className="heading"><img alt="" src={Star} className='nav-links-img'  style={{height:'35%', marginRight:'10px', position:'relative', top:'-5px'}} /><h2 style={{textAlign:'left'}}>Collections</h2></div>
+      <div className="heading"><img alt="" src={Star} className='nav-links-img'  style={{height:'35%', marginRight:'10px', position:'relative', top:'-5px'}} /><h2 style={{textAlign:'left', color:'black'}}>Collections</h2></div>
       <div className='sections'>
       <div className='box'><img alt="" src={Female} className='nav-links-img' />Women</div>
       <div className='box'><img alt="" src={Male} className='nav-links-img' />Men&nbsp;&nbsp;</div>

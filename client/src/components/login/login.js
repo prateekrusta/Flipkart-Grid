@@ -76,18 +76,16 @@ const Login = () => {
           .then((response) => {
             setIsLoading(false);
             console.log('Data sent successfully:', response.data);
-            
             history('/');
-             
-            
           }).catch((error) => {
             console.error('Error sending data:', error);
           });
       };
   return (
-    <div>
+    <div className='login-form'>
            <form onSubmit={handleFormSubmit}>
-            <div className="form-group">
+            <div className="form-group row">
+            <div className='col-sm-12'>
               <label htmlFor="email">Email</label>
               <input
                 type="email"
@@ -97,8 +95,10 @@ const Login = () => {
                 value={emailId}
                 onChange={handleEmailChange}
               />
+              </div>
             </div>
-            <div className="form-group">
+            <div className="form-group row">
+            <div className='col-sm-12'>
               <label htmlFor="password">Password</label>
               <input
                 type="password" 
@@ -108,8 +108,10 @@ const Login = () => {
                 value={password}
                 onChange={handlePasswordChange}
               />
+              </div>
             </div>
-            <div className="form-group">
+            <div className="form-group row">
+              <div className='col-sm-12'>
               <label htmlFor="otp">OTP</label>
               <input
                 type="password" 
@@ -117,8 +119,9 @@ const Login = () => {
                 value={otp} minLength={6} maxLength={6} autoComplete="off"
                 onChange={handleOTPChange}
               />
+              </div>
             </div>
-            <div onClick={GetOTP} style={{color:'white'}}>GET OTP</div>
+            <div onClick={GetOTP} style={{color:'black'}}><a href=''>GET OTP</a></div>
             <div className="btn-sbmt-cont">
               <button type="submit" value="Login" className="btn-sbmt" disabled={isLoading}>
                 {isLoading ? (
