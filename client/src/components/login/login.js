@@ -50,11 +50,6 @@ const Login = () => {
           }
     
           const data = await response.json();
-          setEmailId(data.emailId);
-          setAdminName(data.firstName);
-          localStorage.setItem('emailId', data.emailId);
-          localStorage.setItem('firstName', data.firstName);
-    
         } catch (error) {
           setError('An error occurred during login. Please try again later.');
           setIsLoading(false);
@@ -83,10 +78,10 @@ const Login = () => {
           .then((response) => {
             setIsLoading(false);
             console.log('Data sent successfully:', response.data);
-            setEmailId(data.emailId);
-            setAdminName(data.firstName);
-            localStorage.setItem('emailId', data.emailId);
-            localStorage.setItem('firstName', data.firstName);
+            setEmailId(response.data.emailId);
+            setAdminName(response.data.firstName);
+            localStorage.setItem('emailId', response.data.emailId);
+            localStorage.setItem('firstName', response.data.firstName);
             {(response.data.error) ? <></> : history('/dashboard')}
           }).catch((error) => {
             console.error('Error sending data:', error);

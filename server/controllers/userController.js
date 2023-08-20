@@ -133,7 +133,7 @@ exports.searchQuery = async(req, res) => {
         //     args:[query]
         // };
         console.log("Going")
-        const pythonScript = spawn('python', ['getItems.py',query]);
+        const pythonScript = spawn('python', ['getItems.py']);
         console.log("spawn done")
         let data1="";
         pythonScript.stdout.on('data', (data)=>{

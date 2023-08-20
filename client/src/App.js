@@ -6,6 +6,7 @@ import MainAuthentication from './components/login/main-sign';
 import Chat from './components/chat/chat';
 import AdminEmailContext from './components/context/adminContext';
 import AdminNameContext from './components/context/AdminNameContext';
+import Products from './components/homepage/products';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
                 <Route path="/dashboard" element={<MainHomepage />} />
                 <Route path="/" element={<MainAuthentication />} />
                 <Route path="/chat" element={<Chat />} />
+                <Route path="/search-products" element={<Products />} />
               </Routes>
             </main>
             </AdminNameContext.Provider>

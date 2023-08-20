@@ -13,7 +13,7 @@ import AdminNameContext from '../context/AdminNameContext';
 const Nav = () => {
     const [cartCount, setCartCount] = useState(0);
     const [anchorEl, setAnchorEl] = useState('');
-    const title = ['a', 'b', 'c'];
+    const title = ['Blue Tshirt', 'Reebok Sneakers', 'Ripped Jeans'];
     const history = useNavigate(); 
     const { firstName } = useContext(AdminNameContext);
 
@@ -35,6 +35,7 @@ const Nav = () => {
         axios.post(url, data, config)
           .then((response) => {
             console.log('Data sent successfully:', response.data);
+            history('/search-products')
           })
           .catch((error) => {
             console.error('Error sending data:', error);
@@ -78,7 +79,7 @@ const Nav = () => {
                     <img src={Avatar} style={{ borderRadius: '50%', width:'30px' }} alt="Profile" />
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center' }} className='text-nav'>
-                    &nbsp;Hello,&nbsp; {firstName}
+                    &nbsp;Hello,&nbsp;{firstName}
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
                     <div
