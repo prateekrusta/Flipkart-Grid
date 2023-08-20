@@ -22,7 +22,6 @@ function App() {
               <Routes>
                 <Route path="/dashboard" element={<MainHomepage />} />
                 <Route path="/" element={<MainAuthentication />} />
-                <Route path="/chat" element={<Chat />} />
                 <Route path="/search-products" element={<Products />} />
                 <Route path="/chat" element={<AssistChat />} />
               </Routes>

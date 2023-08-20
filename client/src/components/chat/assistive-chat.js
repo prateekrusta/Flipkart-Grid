@@ -9,7 +9,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
 const AssistChat = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = React.useState('');
   const open = Boolean(anchorEl);
 
   const [messages, setMessages] = React.useState(''); // Initialize as empty
@@ -40,6 +40,7 @@ const AssistChat = () => {
   };
 
   return (
+    <>    
     <div className="chat-outside">
       <Chatheader label="Help Center" />
       <div className="container">
@@ -48,15 +49,13 @@ const AssistChat = () => {
             {messages ? (
               <MessageRight
                 message={messages}
-                photoURL=""
                 displayName="Prateek"
                 avatarDisp={true}
               />
-            ) : null}
+            ) : <></>}
             {showResponse && response ? (
               <MessageLeft
                 message={response}
-                photoURL=""
                 avatarDisp={true}
               />
             ) : null}
@@ -80,6 +79,8 @@ const AssistChat = () => {
         <MenuItem onClick={handleClose}>Report</MenuItem>
       </Menu>
     </div>
+    </>
+
   );
 }
 
