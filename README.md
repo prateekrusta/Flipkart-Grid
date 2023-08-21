@@ -1,4 +1,4 @@
-# InDrivePal
+# FashionCraze
 
 ## Instructions To Set Up Application
 
