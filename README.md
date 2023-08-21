@@ -44,7 +44,7 @@ We've developed a user-centric web application that takes fashion discovery to t
 🔗 [Youtube Demo Video]()
 
 ## Powerpoint Presentation
-🔗 [Google Drive]()
+🔗 [Google Drive](https://docs.google.com/presentation/d/1LCZWrZx76bEk83MLPAJJJ7T5oNT61SV6/edit?usp=sharing&ouid=103950989292797679280&rtpof=true&sd=true)
 
 
 ## Team Member
