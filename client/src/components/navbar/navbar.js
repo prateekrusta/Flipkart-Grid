@@ -83,7 +83,7 @@ const Nav = () => {
                     <img src={Avatar} style={{ borderRadius: '50%', width:'30px' }} alt="Profile" />
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center' }} className='text-nav'>
-                    &nbsp;Hello,&nbsp;{firstName}
+                    &nbsp;Hello,&nbsp;Prateek
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
                     <div
