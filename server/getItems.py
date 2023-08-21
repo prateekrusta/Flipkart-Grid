@@ -16,10 +16,9 @@ def process_dataframe(input_text, num_rows=6):
     split_words = input_text.split()
     colour = split_words[0]
     name = split_words[1]
-
     # Filter rows based on the name in the title
-    filtered = df2[df2['title'].apply(lambda title: name in title.split())]
-
+    filtered = df2[df2['title'].str.contains(name, case=False)]
+    
     # Filter rows based on color if specified, otherwise show all
     if colour != 'any':
         extracted_colors = []
@@ -35,14 +34,14 @@ def process_dataframe(input_text, num_rows=6):
         filtered['extracted_color'] = extracted_colors
         filtered.dropna(subset=['extracted_color'], inplace=True)
         filtered = filtered[filtered['extracted_color'].str.contains(colour, case=False)]
-
     # Show the first num_rows rows
     output = filtered.head(num_rows)
 
     return output
 
+import sys
 # Example usage
-input_text = 'blue Trousers'
+input_text = 'Blue Trouser'
 output = process_dataframe(input_text)
 
 import json
@@ -63,7 +62,6 @@ for i in range(1, 5):
     # print(temp_dict)
     output_list.append(temp_dict)
 
-import requests
 print(json.dumps(output_list))
 
 # url = "http://localhost:8000/v1/user/processData"

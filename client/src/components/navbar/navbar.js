@@ -9,6 +9,7 @@ import '../../assets/css/navbar.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import AdminNameContext from '../context/AdminNameContext';
+import ProductList from '../context/getProducts';
 
 const Nav = () => {
     const [cartCount, setCartCount] = useState(0);
@@ -16,7 +17,8 @@ const Nav = () => {
     const title = ['Blue Tshirt', 'Reebok Sneakers', 'Ripped Jeans'];
     const history = useNavigate(); 
     const { firstName } = useContext(AdminNameContext);
-
+    const { setProductList } = useContext(ProductList);
+    const [search, setSearch] = useState('');
     
     const config = {
         headers: {
@@ -28,13 +30,15 @@ const Nav = () => {
         e.preventDefault();
     
         const data = {
-            query:"blue shirt",
+            query: "Blue Tshirt",
         };
-        console.log(data)
+
         const url = `http://localhost:8000/v1/user/searchQuery`;
         axios.post(url, data, config)
           .then((response) => {
             console.log('Data sent successfully:', response.data);
+            setProductList(response.data);
+            localStorage.setItem('productList', response.data.data);
             history('/search-products')
           })
           .catch((error) => {
